@@ -40,7 +40,7 @@ void swap5(int*& a, int*& b) {
 	b = temp;
 }
 
-void main() {
+int main() {
 	int left = 10, right = 20;
 
 	cout << "before swap1:\n"
