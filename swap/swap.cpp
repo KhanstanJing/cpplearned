@@ -8,6 +8,39 @@ void swap1(int a, int b) {
 	b = temp;
 }
 
+void swap11(int a, int b) {
+	cout << "\nnow, the process of swap11 should give you a better understanding of how the funcion works\n" << endl;
+
+	int temp;
+
+	cout << "swap11 starts:" << endl;
+	cout << "a = " << a << ", b = " << b << ", temp = " << temp << endl;
+	cout << "&a = " << &a << ", &b = " << &b << ", &temp = " << &temp << endl;
+
+	cout << "\nNOTICE: here the difference between '&a', '&b', '&left' and '&right' should make you realize\n"
+		"that they are different things, 'a' and 'b' are created during functioning\n"
+		"you can try print the value and the address of 'a' or 'b' after the funcion is done\n" << endl;
+
+	cout << "after 'temp = a'" << endl;
+	temp = a;
+	cout << "a = " << a << ", b = " << b << ", temp = " << temp << endl;
+	cout << "&a = " << &a << ", &b = " << &b << ", &temp = " << &temp << endl;
+
+	cout << "\nafter 'a = b'" << endl;
+	a = b;
+	cout << "a = " << a << ", b = " << b << ", temp = " << temp << endl;
+	cout << "&a = " << &a << ", &b = " << &b << ", &temp = " << &temp << endl;
+
+	cout << "\nafter 'b = temp'" << endl;
+	b = temp;
+	cout << "a = " << a << ", b = " << b << ", temp = " << temp << endl;
+	cout << "&a = " << &a << ", &b = " << &b << ", &temp = " << &temp << endl;
+
+	cout << "\nNOTICE: I can tell you with great confidence, though I didnnot output the value and the address of 'left' and 'right'\n"
+		"they didnot change during functionning. If you want to valify this by yourself, you can learn to rewrite this file\n"
+		"make the function stop at the certain point and see the value and the address of 'left' and 'right'\n" << endl;
+}
+
 void swap2(int& a, int& b) {
 	int temp;
 	temp = a;
@@ -43,6 +76,7 @@ void swap5(int*& a, int*& b) {
 int main() {
 	int left = 10, right = 20;
 
+	// swap1
 	cout << "before swap1:\n"
 		<< "left = " << left << ", right = " << right << ", &left = " << &left << ", &right = " << &right << endl;
 	swap1(left, right);
@@ -51,7 +85,16 @@ int main() {
 	cout << "'info' didnot change, 'add' didnot change, neither the repository nor the cargo changed" << endl;
 	cout << "this shows that swap1 does not change the value saved in the address\n" << endl;
 
-	cout << "before swap2:\n"
+	// swap11
+	cout << "SWAP11" << endl;
+	cout << "before swap11:\n"
+		<< "left = " << left << ", right = " << right << "\n&left = " << &left << ", &right = " << &right << endl;
+	swap11(left, right);
+	cout << "after swap11:\n"
+		<< "left = " << left << ", right = " << right << "\n&left = " << &left << ", &right = " << &right << endl;
+
+	// swap2
+	cout << "\nbefore swap2:\n"
 		<< "left = " << left << ", right = " << right << ", &left = " << &left << ", &right = " << &right << endl;
 	swap2(left, right);
 	cout << "after swap2:\n"
